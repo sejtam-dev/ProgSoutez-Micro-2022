@@ -1,4 +1,4 @@
-### Zařízení pro vysílání Morseovky
+# Zařízení pro vysílání Morseovky
 
 
 ## Použité programy
@@ -22,12 +22,12 @@ Po zadání vstupu do Serial komunikace se provede akce podle určitého módu.
 Serial pracuje přes UART rychlostí 9600 baudů za sekundu.
 
 
-## Popis módů
+# Popis módů
 
-# DEBUG
+## DEBUG
 Po zadání textu se vypíše morseovka do výstupního okna.
 
-# VISUAL
+## VISUAL
 Po zadání textu se vybliká morseovka na žluté led diodě.
 
 Intervaly:
@@ -36,7 +36,7 @@ Intervaly:
  - Mezi tečky a čárky: 500ms
  - Mezi písmeny: 1000ms
 
-# AUDIO
+## AUDIO
 Po zadání textu se vypípá morseovka na bzučáku.
 
 Intervaly:
@@ -45,5 +45,5 @@ Intervaly:
  - Mezi tečky a čárky: 500ms
  - Mezi písmeny: 1000ms
 
-## Zákmit tlačítek
+# Zákmit tlačítek
 Zákmit je řešen pomocí PullUp módu na pinu. Poté měřím čas po dobu tlačítka a musí být větší než 150ms.
