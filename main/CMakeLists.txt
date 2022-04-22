@@ -25,13 +25,20 @@ set(MAIN_LIBRARIES)
 
 list(APPEND MAIN_LIBRARIES pico_stdlib)
 
-#list(APPEND MAIN_LIBRARIES hardware_pwm)
+list(APPEND MAIN_LIBRARIES hardware_pwm)
+list(APPEND MAIN_LIBRARIES pico_multicore)
 #list(APPEND MAIN_LIBRARIES hardware_flash)
 #list(APPEND MAIN_LIBRARIES hardware_sync)
 
+list(APPEND MAIN_LIBRARIES Button_MAIN)
+list(APPEND MAIN_INCLUDE_DIRS ${ROOT_DIR}/3rdparty/RP-Pico-Button-Library/main/include)
+
+list(APPEND MAIN_LIBRARIES Buzzer_MAIN)
+list(APPEND MAIN_INCLUDE_DIRS ${ROOT_DIR}/3rdparty/RP-Pico-Buzzer-Library/main/include)
+
 # Create Library
 include_directories(${MAIN_INCLUDES_DIR})
-add_library(${PROJECT_NAME}_MAIN ${MAIN_SOURCES})
+add_executable(${PROJECT_NAME}_MAIN ${MAIN_SOURCES})
 
 set_target_properties(${PROJECT_NAME}_MAIN PROPERTIES PUBLIC_HEADER MAIN_INCLUDES_DIR)
 
@@ -39,7 +46,7 @@ set_target_properties(${PROJECT_NAME}_MAIN PROPERTIES PUBLIC_HEADER MAIN_INCLUDE
 target_include_directories(${PROJECT_NAME}_MAIN PRIVATE ${MAIN_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME}_MAIN PRIVATE ${MAIN_LIBRARIES})
 
-#pico_enable_stdio_usb(${PROJECT_NAME}_MAIN 1)
+pico_enable_stdio_usb(${PROJECT_NAME}_MAIN 1)
 pico_enable_stdio_uart(${PROJECT_NAME}_MAIN 0)
 
 pico_add_extra_outputs(${PROJECT_NAME}_MAIN)

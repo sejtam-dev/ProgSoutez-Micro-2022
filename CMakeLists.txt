@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 ###### Change this attributs
 
-set(PROJECT_NAME PROJECT_EXAMPLE)
+set(PROJECT_NAME ProgSoutez2022)
 
 ######
 
@@ -77,6 +77,8 @@ message("=")
 
 if (TARGET tinyusb_device)
 
+	add_subdirectory(3rdparty/RP-Pico-Buzzer-Library/)
+	add_subdirectory(3rdparty/RP-Pico-Button-Library/)
     add_subdirectory(main)
     
     message("=================")

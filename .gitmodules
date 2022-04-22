@@ -1,3 +1,9 @@
 [submodule "3rdparty/pico-sdk"]
 	path = 3rdparty/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
+[submodule "3rdparty/RP-Pico-Button-Library"]
+	path = 3rdparty/RP-Pico-Button-Library
+	url = https://github.com/sejtam-dev/RP-Pico-Button-Library.git
+	[submodule "3rdparty/RP-Pico-Buzzer-Library"]
+	path = 3rdparty/RP-Pico-Buzzer-Library
+	url = https://github.com/sejtam-dev/RP-Pico-Buzzer-Library.git
